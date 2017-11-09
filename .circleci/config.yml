@@ -3,12 +3,18 @@ jobs:
   build:
     working_directory: ~/app
     docker:
-      - image: circleci/node:8.4.0
+      - image: circleci/node:latest
     steps:
       - checkout
       - run:
+          name: install npm log
+          command: 'sudo npm install npmlog'
+      - run:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
+      # - run:
+      #     name: install npm log
+      #     command: 'sudo npm install -g npm@latest'
       # - run:
       #     name: install-npmlog
       #     command: 'sudo npm install -g npmlog'
