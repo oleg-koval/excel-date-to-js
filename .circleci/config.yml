@@ -3,15 +3,12 @@ jobs:
   build:
     working_directory: ~/app
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:latest-browsers
     steps:
       - checkout
       - run:
-          name: install npm log
-          command: 'sudo npm install npmlog'
-      - run:
           name: update-npm
-          command: 'sudo npm install -g npm@latest'
+          command: 'sudo npm install -g npm@5.0.3'
       # - run:
       #     name: install npm log
       #     command: 'sudo npm install -g npm@latest'
