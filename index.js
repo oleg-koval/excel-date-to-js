@@ -12,7 +12,6 @@
 module.exports.convertExcelDate = (excelDate) => {
   if (!Number(excelDate)) {
     throw new Error('wrong input format')
-    return
   }
 
   const secondsInDay = 24 * 60 * 60;
