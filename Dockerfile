@@ -5,5 +5,4 @@ RUN apk update && \
     rm -rf /var/cache/apk/* && \
     rm -rf /tmp/*
 
-RUN npm install \
-        -g --quiet
+RUN npm install -g --quiet
