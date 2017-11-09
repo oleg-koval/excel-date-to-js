@@ -8,8 +8,7 @@
     "node": ">=4.2.4"
   },
   "scripts": {
-    "test": "./node_modules/.bin/tape ./test/**.js | tnyan",
-    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
+    "test": "./node_modules/.bin/tape ./test/**.js | tnyan"
   },
   "repository": {
     "type": "git",
