@@ -9,6 +9,9 @@ jobs:
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
+      - run:
+          name: install-npmlog
+          command: 'sudo npm install -g npmlog'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
