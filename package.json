@@ -28,7 +28,9 @@
     "url": "https://github.com/oleg-koval/excel-date-to-js/issues"
   },
   "homepage": "https://github.com/oleg-koval/excel-date-to-js#readme",
-  "dependencies": {},
+  "dependencies": {
+    "npmlog": "^4.1.2"
+  },
   "devDependencies": {
     "tape": "^4.8.0"
   }
