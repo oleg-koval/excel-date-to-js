@@ -5,11 +5,11 @@
  *    Jan 1, 1900 and Jan 1, 1970, plus 2 ("excel leap year bug")
  * 2. Convert to milliseconds.
  *
- * @method convertExcelDate
+ * @method getJsDateFromExcel
  * @param  {Number}         excelDate
  * @return {Date}
  */
-module.exports.convertExcelDate = (excelDate) => {
+module.exports.getJsDateFromExcel = (excelDate) => {
   if (!Number(excelDate)) {
     throw new Error('wrong input format')
   }
