@@ -8,7 +8,7 @@
     "node": ">=4.2.4"
   },
   "scripts": {
-    "test": "./node_modules/.bin/tape ./test/**.js | tnyan"
+    "test": "./node_modules/.bin/tape ./test/**.js"
   },
   "repository": {
     "type": "git",
