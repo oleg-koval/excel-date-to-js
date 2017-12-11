@@ -18,7 +18,23 @@ module.exports.getJsDateFromExcel = (excelDate) => {
   const missingLeapYearDay = secondsInDay * 1000;
   const delta = excelDate - (25567 + 2);
   const parsed = delta * missingLeapYearDay;
-  const date = new Date(parsed)
+  const parsedDate = new Date(parsed);
+
+  const fractionalDay = excelDate - Math.floor(excelDate) + 0.0000001;
+  let totalSeconds = Math.floor(secondsInDay * fractionalDay);
+  const seconds = totalSeconds % 60;
+  totalSeconds -= seconds;
+  const hours = Math.floor(totalSeconds / (60 * 60));
+  const minutes = Math.floor(totalSeconds / 60) % 60;
+
+  const date = new Date(
+    parsedDate.getFullYear(),
+    parsedDate.getMonth(),
+    parsedDate.getDate(),
+    hours,
+    minutes,
+    seconds
+  );
 
   if (Object.prototype.toString.call(date) === "[object Date]" ) {
     if (isNaN(date.getTime())) {
