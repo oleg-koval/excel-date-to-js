@@ -1,6 +1,6 @@
 {
   "name": "excel-date-to-js",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "private": false,
   "description": "Convert Excel date in integer format into JS date. Dates are stored as numbers in Excel and count the number of days since January 0, 1900 (1900 standard, for mac it is 1904, which means January 0, 1904 is the start date). Times are handled internally as numbers between 0 and 1.",
   "main": "index.js",
@@ -8,11 +8,12 @@
     "node": ">=4.2.4"
   },
   "scripts": {
-    "test": "./node_modules/.bin/tape ./test/**.js | tnyan"
+    "test": "npx tape ./test/**.js",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/oleg-koval/excel-date-to-js.git"
+    "url": "https://github.com/oleg-koval/excel-date-to-js.git"
   },
   "keywords": [
     "excel",
@@ -33,9 +34,8 @@
   "homepage": "https://github.com/oleg-koval/excel-date-to-js#readme",
   "dependencies": {},
   "devDependencies": {
-    "coveralls": "^2.11.16",
-    "istanbul": "^0.4.5",
-    "mocha": "^3.2.0",
+    "semantic-release": "^15.13.24",
+    "semantic-release-npm-github-publish": "^1.1.10",
     "tap-nyan": "^1.1.0",
     "tape": "^4.8.0"
   }
