@@ -1,3 +1,5 @@
+## [1.0.7](https://github.com/oleg-koval/excel-date-to-js/compare/v1.0.6...v1.0.7) (2021-09-23)
+
 ## [1.0.6](https://github.com/oleg-koval/excel-date-to-js/compare/v1.0.5...v1.0.6) (2020-08-19)
 
 ## [1.0.5](https://github.com/oleg-koval/excel-date-to-js/compare/v1.0.4...v1.0.5) (2020-08-19)
