@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/oleg-koval/excel-date-to-js/compare/v1.0.7...v1.1.0) (2021-09-23)
+
+
+### Features
+
+* add ability to transform js date back to excel ([#20](https://github.com/oleg-koval/excel-date-to-js/issues/20)) ([119ce12](https://github.com/oleg-koval/excel-date-to-js/commit/119ce121bcc16e3f030c1fdd4e34464884b1b115))
+
 ## [1.0.7](https://github.com/oleg-koval/excel-date-to-js/compare/v1.0.6...v1.0.7) (2021-09-23)
 
 ## [1.0.6](https://github.com/oleg-koval/excel-date-to-js/compare/v1.0.5...v1.0.6) (2020-08-19)
