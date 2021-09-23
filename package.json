@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/oleg-koval/excel-date-to-js#readme",
   "devDependencies": {
-    "semantic-release": "^15.13.24",
+    "semantic-release": "^17.2.3",
     "semantic-release-npm-github-publish": "^1.1.10",
     "tape": "^4.8.0"
   }
