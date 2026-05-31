@@ -1,8 +1,24 @@
-const SECONDS_IN_DAY = 24 * 60 * 60;
-const MISSING_LEAP_YEAR_DAY = SECONDS_IN_DAY * 1000;
-const MAGIC_NUMBER_OF_DAYS = (25567 + 2);
+const MILLISECONDS_PER_DAY = 24 * 60 * 60 * 1000;
+const EXCEL_EPOCH_OFFSET_DAYS = 25569;
+const INVALID_INPUT_ERROR = 'wrong input format';
+const INVALID_EXCEL_DATE_ERROR = 'wrong excel date input';
 
-const isDate = date => Object.prototype.toString.call(date) === "[object Date]" && !isNaN(date.getTime())
+const isDate = (date) => Object.prototype.toString.call(date) === '[object Date]' && !Number.isNaN(date.getTime());
+
+const assertValidExcelDate = (excelDate) => {
+  if (!Number(excelDate)) {
+    throw new Error(INVALID_INPUT_ERROR);
+  }
+};
+
+const assertValidDate = (date) => {
+  if (!isDate(date)) {
+    throw new Error(INVALID_INPUT_ERROR);
+  }
+};
+
+const excelDateToMilliseconds = (excelDate) => (excelDate - EXCEL_EPOCH_OFFSET_DAYS) * MILLISECONDS_PER_DAY;
+const jsDateToExcelDate = (date) => (date.getTime() / MILLISECONDS_PER_DAY) + EXCEL_EPOCH_OFFSET_DAYS;
 
 /**
  * JavaScript dates can be constructed by passing milliseconds
@@ -15,26 +31,25 @@ const isDate = date => Object.prototype.toString.call(date) === "[object Date]" 
  * @param  {Number}         excelDate
  * @return {Date}
  */
-module.exports.getJsDateFromExcel = (excelDate) => {
-  if (!Number(excelDate)) {
-    throw new Error('wrong input format')
-  }
+const getJsDateFromExcel = (excelDate) => {
+  assertValidExcelDate(excelDate);
 
-  const delta = excelDate - MAGIC_NUMBER_OF_DAYS;
-  const parsed = delta * MISSING_LEAP_YEAR_DAY;
-  const date = new Date(parsed)
+  const date = new Date(excelDateToMilliseconds(excelDate));
 
   if (!isDate(date)) {
-      throw new Error('wrong excel date input')
+    throw new Error(INVALID_EXCEL_DATE_ERROR);
   }
 
-  return date
-}
+  return date;
+};
 
-module.exports.getExcelDateFromJs = (date) => {
-  if (!isDate(date)) {
-      throw new Error('wrong input format')
-  }
+const getExcelDateFromJs = (date) => {
+  assertValidDate(date);
 
-  return (date.getTime() / MISSING_LEAP_YEAR_DAY) + MAGIC_NUMBER_OF_DAYS
-}
+  return jsDateToExcelDate(date);
+};
+
+module.exports = {
+  getJsDateFromExcel,
+  getExcelDateFromJs,
+};
